@@ -14,8 +14,6 @@
 #define kfg 220		// "\"  |
 #define kfp 192		//` ~
 
-//#pragma comment(lib, "winmm")
-
 using namespace std;
 
 int Rest = 0, C8 = 108, B7 = 107, A7s = 106, A7 = 105, G7s = 104, G7 = 103, F7s = 102, F7 = 101, E7 = 100,
@@ -145,8 +143,7 @@ int main()
 		++ tim;
 		g = kget();
 		if (g != '*')
-			cout << g << "\n",
-			out(v[g]);
+			out(v.find(g) != v.end() ? v.at(g) : rand() % 50 + 25);
 	}
 	midiOutClose(handle);
 	return 0;
